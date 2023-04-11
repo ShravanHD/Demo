@@ -1,26 +1,108 @@
 <!DOCTYPE html>
+
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
+    <style>
+        body{
+        
+            background-image: url(update.jpg);
+	    	background-repeat: no-repeat;
+        	background-size: cover;
+			margin: 0px;
+            
+        }
+        #backgroung{
+           
+           
+            padding-top: 100px;
+            
+        }
+        #login{
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 5px 5px 10px gray;
+            margin-left: 800px;
+           
+        }
+        #error
+        {
+            position: absolute;
+            top: 530px;
+           right: 370px;
+           color: red;
+
+        }
+
+    </style>
 </head>
 <body>
-			<h1>Updte your data</h1>
-			<form action="Update_data" method="get">
-			Old Email : <input type="text" name = "old_email" required="required" > <br>
-			
-			Name : <input type="text" name ="name"  required="required"><br>
-		
-			Email : <input type="email" name="email" required="required"><br>
-		
-			PhoneNo :<input type="number" name ="number" required="required"><br>
-		
-			Gender :<label>Male</label><input type="radio"  name ="gender" value="Male" required="required"><br>
-					<label>Female</label><input type ="radio"  name ="gender" value="Female"><br>
-		
-			Password : <input type="password" name="password" required="required"><br>  
-			
-			<button>Submit</button>
-		</form>
+	
+
+		<div id="backgroung">
+        	<div id="login">
+            <div style="display: flex;padding-top: 50px;padding-left: 50px;">
+                
+
+
+                <a style="text-decoration: none;" >
+                    <div style="background-color: rgb(233, 231, 231);border-radius: 20px;padding: 10px;width: 100px;margin-left: 10px;box-shadow: 5px 5px 10px gray;">
+                        <div style="color: rgb(89, 89, 238);font-size: larger;text-align: center;"><b>Update</b></div>
+                    </div>
+                </a>
+
+               
+            </div>
+
+            <!-- ============================================================= -->
+            <div style="margin-top: 40px;margin-left: 50px;">
+                <form action="Update_data" method="get">
+                
+                
+                   <div>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""><b>Old email</b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="email" name = "old_email" required>
+                    </div>
+                	<div>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""><b>Name : </b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="text" name ="name" required>
+                    </div>
+
+                    <div>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""><b>Mobile No.</b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="number" name ="number" required>
+                    </div>
+                    
+                    <div>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""><b>Gender : </b> </label>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""> Male </label>
+                        <input  type="radio" name ="gender" value="Male" required>
+                    	<label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""> Female </label>
+                        <input  type="radio" name ="gender" value="Female" required>    
+                    
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;"for=""><b>Password</b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="password" name="password" required>
+                    </div>
+                    
+   
+                    
+                        <div style="margin-top: 30px;margin-left: 20px;">
+                            <button style="width: 100px;height:30px;background-color:rgb(89, 89, 238);border: none;font-size: large;border-radius: 10px;color: white;box-shadow: 5px 5px 10px gray;"><b>Submit</b> </button>
+                        </div>                    
+                   
+                </form>
+
+
+            </div>           
+        </div>
+    </div>
 </body>
 </html>

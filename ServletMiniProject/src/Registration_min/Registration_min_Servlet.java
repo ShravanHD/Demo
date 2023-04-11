@@ -44,13 +44,23 @@ public class Registration_min_Servlet extends HttpServlet
 			
 			while(rs.next()) 
 			{
-				String error = email +" User already Exist";
 				resp.setContentType("text/html");
+				
 				PrintWriter pw = resp.getWriter();
-				pw.print(error);
+				
+				pw.println(" <div id=\"error\"> <p >User already exist.</p> </div>");
+				
+				
+				
 				RequestDispatcher rd = req.getRequestDispatcher("Registration_min.html");
 				rd.include(req, resp);
 			}
+			
+			resp.setContentType("text/html");
+			
+			PrintWriter pww = resp.getWriter();
+			
+			pww.print("<div id=\"name\"><p style=\"margin: 10px;\">Hello "+name+"</p></div>");
 			
 			PreparedStatement ps = con.prepareStatement("insert into registor values (?,?,?,?,?)");
 			ps.setString(1, name);
@@ -63,7 +73,7 @@ public class Registration_min_Servlet extends HttpServlet
 			ps.executeUpdate();
 			
 			RequestDispatcher rd1 = req.getRequestDispatcher("Home_Page.html");
-			rd1.forward(req, resp);
+			rd1.include(req, resp);
 				
 			
 		}

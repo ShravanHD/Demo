@@ -1,29 +1,85 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body
+        {
+			background-image: url(loginbackgroundimg.jpg);
+	    	background-repeat: no-repeat;
+        	background-size: cover;
+			margin: 0px;
+            
+        }
+        #error
+        {
+            position: absolute;
+            top: 470px;
+           right: 270px;
+           color: red;
+
+        }
+		 .backgroung
+		{  
+            width: 100%;
+            height: 595px;
+            padding-top: 90px;
+
+        }
+       	.login{
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 50px;
+            box-shadow: 5px 5px 10px gray;
+            margin-left: 800px; 
+           
+        }
+
+    </style>
 </head>
 <body>
-	<h1>Welcome to Shravan travels</h1>
-	<h3>Welcome to our Travel,This for you to travel and adventure. Pack your bags, hit the road and don't forget to write down all of your amazing stories!</h3>
-	<form action="Registor.html">
-		<button>Logout</button>
-	</form>
-	<form action="PasswordCheck.html">
-		<button>Update</button>
-	</form>
-	
-	</form>
-	<form action="Delete.html">
-		<button>Delete My account</button>
-	</form>
-	
-	<p>Enter the <b>Email</b>And <b>Password</b> to change the password</p>
-	<form action="Delete_Pass_Check">
-		<input type = "email" name="email_Check">
-		<input type="password" name="password_Check"><br>
-		<button>Check My Password</button>
-	</form>
+    <div class="backgroung">
+        <div class="login">
+            <!-- ============================================================= -->
+            <div style="display: flex;padding-top: 50px;padding-left: 50px;">
+                
+                <a style="text-decoration: none;" href="Login_mini.html">
+                    <div style="background-color: rgb(233, 231, 231);border-radius: 20px;padding: 10px;width: 300px;box-shadow: 5px 5px 10px gray;">
+                        <div style="color: rgb(89, 89, 238);font-size: larger;text-align: center;"><b>Enter <span style = "color : red;">email</span> and <span style = "color : red;">password</span> to delete your account</b></div>
+                    </div>
+                </a>
+
+
+ 
+            </div>
+            <!-- ============================================================= -->
+            <div style="margin-top: 60px;margin-left: 50px;">
+                <form action="Delete_Pass_Check" method="get" >
+                    <div>
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;" for=""><b>Enter the email</b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="email" name="email_Check" required>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <label style="margin-left: 10px;margin-bottom: 10px; color:rgb(89, 89, 238) ;"for=""><b>Enter the password</b> </label><br>
+                        <input style="width: 280px;height: 30px;border-radius: 10px;border: none;background-color:rgb(233, 231, 231) ;" type="password" name="password_Check" required>
+                    </div>
+                 
+                    <div style="margin-top: 30px;margin-left: 20px;">
+                        <button style="width: 100px;height:30px;background-color:rgb(89, 89, 238);border: none;font-size: large;border-radius: 10px;color: white;box-shadow: 5px 5px 10px gray;"><b>Delete</b> </button>
+                    </div>
+                    
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

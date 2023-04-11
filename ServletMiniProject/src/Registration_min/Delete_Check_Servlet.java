@@ -44,25 +44,27 @@ public class Delete_Check_Servlet extends HttpServlet
 				
 				ps.executeUpdate();
 				
-				resp.setContentType("text/html");
-				PrintWriter pw = resp.getWriter();
-				pw.println(email +" is deleted");
-				RequestDispatcher rd = req.getRequestDispatcher("Registor.html");
-				rd.include(req, resp);
+				
+				RequestDispatcher rd = req.getRequestDispatcher("Deleted.html");
+				rd.forward(req, resp);
 				
 			}
 			
 			resp.setContentType("text/html");
 			PrintWriter pw = resp.getWriter();
-			pw.print("Incorrect UserName or Password...");
+			pw.println(" <div id=\"error\"> <p >Incurrect User name or Password.</p> </div>");
 			
 			RequestDispatcher rd = req.getRequestDispatcher("Delete.html");
 			rd.include(req, resp);
+			
+	
 		}
 		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
+		
+
 		
 	}
 }

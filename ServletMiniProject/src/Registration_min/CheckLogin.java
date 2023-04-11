@@ -1,4 +1,4 @@
-package Registration_min;
+    package Registration_min;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -28,7 +28,7 @@ public class CheckLogin extends HttpServlet {
 		System.out.println("login page");
 		String email = req.getParameter("email");
 		String pass = req.getParameter("password");
-		String query = "Select Email,Password from registor where (email like '"+ email+"' AND password like '"+pass+"'); ";
+		String query = "Select Name,Email,Password from registor where (email like '"+ email+"' AND password like '"+pass+"'); ";
 
 		try
 		{
@@ -42,14 +42,23 @@ public class CheckLogin extends HttpServlet {
 			
 			while(rs.next()) 
 			{
+				resp.setContentType("text/html");
+				
+				PrintWriter pw = resp.getWriter();
+				
+				pw.print("<div id=\"name\"><p style=\"margin: 10px;\">Hello "+rs.getString(1)+"</p></div>");
 				
 				RequestDispatcher rd = req.getRequestDispatcher("Home_Page.html");
-				rd.forward(req, resp);	
+				rd.include(req, resp);	
+				pw.close();
 			}
 			
 			resp.setContentType("text/html");
+			
 			PrintWriter pw = resp.getWriter();
-			pw.print("Incorrect UserName or Password...");
+			
+			pw.println(" <div id=\"error\"> <p >Incurrect User name or Password.</p> </div>");
+			
 			
 			RequestDispatcher rd = req.getRequestDispatcher("Login_mini.html");
 			rd.include(req, resp);

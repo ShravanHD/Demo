@@ -32,13 +32,14 @@ public class Update_Servlet extends HttpServlet
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shravan_travels","root","root");
 			
-			PreparedStatement ps = con.prepareStatement("update registor set name = ? , email = ?,phone = ?,password = ?, Gender = ? where email= ?");
+			
+			PreparedStatement ps = con.prepareStatement("update registor set name = ? ,phone = ?,password = ?, Gender = ? where email= ?");
 			ps.setString(1, name);
-			ps.setString(2, email);
-			ps.setLong(3, phone);
-			ps.setString(4, pass);
-			ps.setString(5, gender);
-			ps.setString(6, old_email);
+			
+			ps.setLong(2, phone);
+			ps.setString(3, pass);
+			ps.setString(4, gender);
+			ps.setString(5, old_email);
 			
 			
 			ps.executeUpdate();
@@ -47,7 +48,7 @@ public class Update_Servlet extends HttpServlet
 			resp.setContentType("text/html");
 			PrintWriter pw = resp.getWriter();
 			
-			pw.println("Youer data updated dd");
+			pw.println("Youer data updated");
 			pw.println("old email : "+old_email);
 			pw.println(" name : "+ name);
 			pw.println(" email : "+ email);

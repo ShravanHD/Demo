@@ -53,14 +53,14 @@ public class Pass_Check extends HttpServlet
 				
 				RequestDispatcher rd = req.getRequestDispatcher("Update.html");
 				req.setAttribute("Name", rs.getString(1));
-				rd.include(req, resp);
-				System.out.println("hi");
+				rd.forward(req, resp);
+				
 				 
 			}
 			
 			resp.setContentType("text/html");
 			PrintWriter pw = resp.getWriter();
-			pw.print("Incorrect UserName or Password...");
+			pw.println(" <div id=\"error\"> <p >Incurrect User name or Password.</p> </div>");
 			
 			RequestDispatcher rd = req.getRequestDispatcher("PasswordCheck.html");
 			rd.include(req, resp);
